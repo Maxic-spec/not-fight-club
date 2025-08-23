@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const dinamic = document.querySelector(".containerForDinamicOfFight")
   const shop = document.querySelector(".shop")
   const multiplayer = document.querySelector(".multiplayer")
+  const item1 = document.querySelector(".knopka1")
+  const input1 = document.getElementById("myInput1")
 
   item.addEventListener("mouseover", () => {
     item.style.transform = "scale(1.1)";
@@ -326,5 +328,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  item1.addEventListener("mouseover", () => {
+    item1.style.transform = "scale(1.1)";
+  });
 
+  item1.addEventListener("mouseout", () => {
+    item1.style.transform = "scale(1.0)";
+  });
+
+  input1.addEventListener("input", () => {
+    const znac = input1.value.trim();
+    item1.disabled = value === "";
+  });
+
+  item1.addEventListener("click", () => {
+    const znach = input1.value.trim();
+    if (znach !== "") {
+      iterm.style.display = "none";
+      sig.style.display = "flex";
+      name.innerHTML = `<input type='text' id='nameInput' value='${value}'>`;
+      tt.textContent = "Приветствуем вас, " + value;
+    } else {
+      alert("Введите текст перед продолжением!");
+    }
+  });
 });
