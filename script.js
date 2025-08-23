@@ -314,6 +314,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (wins === 0) {
     minus.disabled = true;
-  }
+
+    minus.addEventListener ("click", () => {
+      alert("У вас нет побед которые можно обменять на здоровье!!!")
+    })
+  };
 
 });
