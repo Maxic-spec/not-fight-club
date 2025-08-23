@@ -307,17 +307,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const minus = document.querySelector(".--");
 
   minus.addEventListener("click", () => {
-    wins = Math.max(0, wins - 1);
-    wons.textContent = "Wins: " + wins;
-    playerHP += 10;
+    if (wins > 0) {
+      wins = Math.max(0, wins - 1);
+      wons.textContent = "Wins: " + wins;
+      playerHP += 10;
+
+    if (wins === 0) {
+      minus.disabled = true;
+    }
+    } else {
+      alert("У вас нет побед, которые можно обменять на здоровье!!!");
+    }
   });
 
-  if (wins === 0) {
-    minus.disabled = true;
-
-    minus.addEventListener ("click", () => {
-      alert("У вас нет побед которые можно обменять на здоровье!!!")
-    })
-  };
 
 });
