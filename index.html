@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Not a fight club</title>
+</head>
+<body>
+  <audio id="myAudio" src="7dcbc8fcd5ac807.mp3" loop></audio>
+    <div class="startWindow">
+        <div>
+          <span>
+            <p>Create Your Character<br></p>
+          </span>
+          <span>
+            <p><br>Character Name</p>
+          </span>
+          <span>
+           <input type="text" name="nameOfCharacter" id="myInput">
+          </span>
+          <span>
+            <button type="button" class="knopka" disabled>Create Character</button>
+          </span>
+        </div>
+    </div>
+    <div class="wrap">
+      <span class="tt"></span>
+      <div class="wrapper">
+        <button type="button" class="fight">Fight!!!</button>
+        <button type="button" class="fight1">Shop</button>
+        <button type="button" class="fight4">Settings</button>
+        <button type="button" class="fight2">Character</button>
+        <button type="button" class="fight3">Multiplayer</button>
+      </div>
+    </div>
+    <div class="windowOfSettings">
+      <div class="set">
+        <h3>Settings</h3>
+        <span class="line"></span>
+        <span class="cen">
+          <p>Player name:</p>
+          <p class="name"></p>
+          <button type="button" class="dd">Quit</button>
+        </span>
+      </div>
+    </div>
+    <div class="character">
+      <p class="fr">Выбери своего персонажа!</p>
+      <span class="imge">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675553809_grizly-club-p-klipart-vlastelin-kolets-1.jpg" alt="" class="imgsrc" data-name="Пендальф">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675553819_grizly-club-p-klipart-vlastelin-kolets-19.jpg" alt="" class="imgsrc1" data-name="Лаговас">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675553820_grizly-club-p-klipart-vlastelin-kolets-21.jpg" alt="" class="imgsrc2" data-name="Агроном">
+        <img src="https://grizly.club/uploads/posts/2023-02/1675553822_grizly-club-p-klipart-vlastelin-kolets-29.jpg" alt="" class="imgsrc3" data-name="Фёдор Сумкин">
+        <img src="https://i.pinimg.com/736x/f1/32/01/f13201ab5331ffcd5ee991bed9ea7b96.jpg" alt="" class="imgsrc4" data-name="Агент Смит">
+      </span>
+      <p class="tete"></p>
+      <p class="wins"></p>
+      <p class="loses"></p>
+      <button type="button" class="dd">Quit</button>
+    </div>
+    <div class="fighter">
+        <img src="https://i.pinimg.com/736x/f1/32/01/f13201ab5331ffcd5ee991bed9ea7b96.jpg" alt="" class="class">
+        <span class="space">
+          <form class="inn">
+            <label class="ff"><input type="radio" name="target">Head</label>
+            <label class="ff"><input type="radio" name="target">Neck</label>
+            <label class="ff"><input type="radio" name="target">Body</label>
+            <label class="ff"><input type="radio" name="target">Belly</label>
+            <label class="ff"><input type="radio" name="target">Legs</label>
+          </form>
+          <div class="linia"></div>
+          <form class="in">
+            <label class="ff"><input type="checkbox" name="zones[]">Head<br></label>
+            <label class="ff"><input type="checkbox" name="zones[]">Neck<br></label>
+            <label class="ff"><input type="checkbox" name="zones[]">Body<br></label>
+            <label class="ff"><input type="checkbox" name="zones[]">Belly<br></label>
+            <label class="ff"><input type="checkbox" name="zones[]">Legs<br></label>
+          </form>
+        </span>
+        <span>
+          <img src="https://i.ytimg.com/vi/kiTq8S3oLDU/maxresdefault.jpg" alt="" class="lala">
+        </span>
+        <span class="pp">
+          <div class="liner"></div>
+          <div class="containerForDinamicOfFight">
+          </div>
+        </span>
+      <div class="positioner">
+        <button type="button" class="sit">Удар</button>
+      </div>
+    </div>
+    <div class="shop">
+      <div class="z">
+        <div>
+          <img src="https://st5.depositphotos.com/54703732/76610/i/1600/depositphotos_766109374-stock-photo-medieval-triangular-wooden-shield-golden.jpg" class="imgshechka">
+        </div>
+        <div>
+          <p>Увеличить своё здоровье на 10 за одну победу:</p>
+          <button type="button" class="--">HP++</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
