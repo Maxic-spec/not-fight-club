@@ -414,3 +414,9 @@ span.imge img:first-child {
 .multiplayer {
   display: none;
 }
+
+.centrifuga {
+  display: flex;
+  justify-content: center;
+  margin-top: 400px;
+}
