@@ -312,4 +312,8 @@ document.addEventListener("DOMContentLoaded", () => {
     playerHP += 10;
   });
 
+  if (wins === 0) {
+    minus.disabled = true;
+  }
+
 });
