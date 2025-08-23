@@ -410,3 +410,7 @@ span.imge img:first-child {
 .imgshechka {
   width: 400px;
 }
+
+.multiplayer {
+  display: none;
+}

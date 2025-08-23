@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ydar = document.querySelector(".sit")
   const dinamic = document.querySelector(".containerForDinamicOfFight")
   const shop = document.querySelector(".shop")
+  const multiplayer = document.querySelector(".multiplayer")
 
   item.addEventListener("mouseover", () => {
     item.style.transform = "scale(1.1)";
@@ -79,6 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
     sig.style.display = "none";
     settings.style.display = "flex";
   });
+
+  rec3.addEventListener("click", () => {
+    sig.style.display = "none";
+    multiplayer.style.display = "flex";
+  })
 
   ddButtons.forEach(dd => {
     dd.addEventListener("click", () => {
