@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const item1 = document.querySelector(".knopka1")
   const input1 = document.getElementById("myInput1")
   const centrifuga = document.querySelector(".centrifuga")
+  const fii = document.querySelector(".fighter1")
 
   item.addEventListener("mouseover", () => {
     item.style.transform = "scale(1.1)";
@@ -346,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const znach = input1.value.trim();
     if (znach !== "") {
       centrifuga.style.display = "none";
-      sig.style.display = "flex";
+      fii.style.display = "flex";
     } else {
       alert("Введите текст перед продолжением!");
     }
