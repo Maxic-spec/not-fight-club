@@ -433,3 +433,12 @@ span.imge img:first-child {
   transition: transform 0.3s ease;
   margin-left: 10px;
 }
+
+.fighter1 {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://grizly.club/uploads/posts/2023-02/1675553831_grizly-club-p-klipart-vlastelin-kolets-50.jpg");
+}

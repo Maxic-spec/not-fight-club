@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const multiplayer = document.querySelector(".multiplayer")
   const item1 = document.querySelector(".knopka1")
   const input1 = document.getElementById("myInput1")
+  const centrifuga = document.querySelector(".centrifuga")
 
   item.addEventListener("mouseover", () => {
     item.style.transform = "scale(1.1)";
@@ -338,18 +339,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   input1.addEventListener("input", () => {
     const znac = input1.value.trim();
-    item1.disabled = value === "";
+    item1.disabled = znac === "";
   });
 
   item1.addEventListener("click", () => {
     const znach = input1.value.trim();
     if (znach !== "") {
-      iterm.style.display = "none";
+      centrifuga.style.display = "none";
       sig.style.display = "flex";
-      name.innerHTML = `<input type='text' id='nameInput' value='${value}'>`;
-      tt.textContent = "Приветствуем вас, " + value;
     } else {
       alert("Введите текст перед продолжением!");
     }
   });
+
+
 });
