@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
         botHP -= 15;
         playerAttackResult = `Вы атаковали бота в "${playerAttack}", но он заблокировал ваш удар. К вашему счастью ваш меч скользнул по руке противника, и отрезал палец с Кольцом Всевластья! HP бота: ${botHP}`;
       } else {
-        botHP -= 15;
+        botHP -= 25;
         playerAttackResult = `Вы атаковали бота в "${playerAttack}" — попадание! Удар был так хорош, что снёс боту руку с Кольцом Всевластья! HP бота: ${botHP}`;
       }
     } else {
