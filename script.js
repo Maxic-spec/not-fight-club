@@ -43,10 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
       sig.style.display = "flex";
       name.innerHTML = `<input type='text' id='nameInput' value='${value}'>`;
       tt.textContent = "Приветствуем вас, " + value;
+
+      const nameInput = document.getElementById("nameInput");
+      nameInput.addEventListener("input", () => {
+        tt.textContent = "Приветствуем вас, " + nameInput.value.trim();
+      });
     } else {
       alert("Введите текст перед продолжением!");
     }
   });
+
 
   const fightButtons = [rec, rec1, rec2, rec3];
   fightButtons.forEach(btn => {
