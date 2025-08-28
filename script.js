@@ -247,6 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fightButton.addEventListener('click', () => {
     const selectedAttack = attackForm.querySelector('input[name="target"]:checked');
     const selectedBlocks = blockForm.querySelectorAll('input[name="zones[]"]:checked');
+    const randomNumber1 = Math.floor(Math.random() * 5) + 1;
+    const randomNumber2 = Math.floor(Math.random() * 5) + 1;
 
     if (!selectedAttack || selectedBlocks.length !== 2) {
       resultContainer.innerHTML = `<p style="color:red;">Выберите одну цель атаки и ровно две зоны блока!</p>`;
@@ -268,12 +270,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let playerAttackResult;
-    if (botBlocks.includes(playerAttack)) {
-      playerAttackResult = `Вы атаковали бота в "${playerAttack}", но он заблокировал ваш удар. HP бота: ${botHP}`;
+    if (randomNumber1 === randomNumber2){
+      if (botBlocks.includes(playerAttack)) {
+        botHP -= 15;
+        playerAttackResult = `Вы атаковали бота в "${playerAttack}", но он заблокировал ваш удар. К вашему счастью ваш меч скользнул по руке противника, и отрезал палец с Кольцом Всевластья! HP бота: ${botHP}`;
+      } else {
+        botHP -= 15;
+        playerAttackResult = `Вы атаковали бота в "${playerAttack}" — попадание! Удар был так хорош, что снёс боту руку с Кольцом Всевластья! HP бота: ${botHP}`;
+      }
     } else {
-      botHP -= 10;
-      playerAttackResult = `Вы атаковали бота в "${playerAttack}" — попадание! HP бота: ${botHP}`;
-    }
+      if (botBlocks.includes(playerAttack)) {
+        playerAttackResult = `Вы атаковали бота в "${playerAttack}", но он заблокировал ваш удар. HP бота: ${botHP}`;
+      } else {
+        botHP -= 10;
+       playerAttackResult = `Вы атаковали бота в "${playerAttack}" — попадание! HP бота: ${botHP}`;
+      }
+    };
 
     let botAttackResult;
     if (playerBlocks.includes(botAttack)) {
