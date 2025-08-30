@@ -371,5 +371,81 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const input12 = document.getElementById("myInput1");
+  const createBtn = document.querySelector(".create-character");
+  const attackBtn = document.querySelector(".attack-button");
+  const log = document.querySelector(".containerForDinamicOfFight");
+
+  let playerName = "";
+  let playerHP1 = 100;
+  let enemyHP = 100;
+
+  input.addEventListener("input", () => {
+    createBtn.disabled = input12.value.trim() === "";
+  });
+
+  createBtn.addEventListener("click", () => {
+    playerName = input12.value.trim();
+    appendToLog(`🧍 Персонаж "${playerName}" создан. HP: ${playerHP1}`);
+    createBtn.disabled = false;
+    input.disabled = true;
+  });
+
+  attackBtn.addEventListener("click", () => {
+    if (!playerName) {
+      appendToLog("❗ Сначала создайте персонажа.");
+      return;
+    }
+
+    const target = document.querySelector('input[name="target"]:checked');
+    const zones = Array.from(document.querySelectorAll('input[name="zones[]"]:checked')).map(z => z.value);
+
+    if (!target) {
+      appendToLog("❗ Выберите цель атаки.");
+      return;
+    }
+
+    const damage = Math.floor(Math.random() * 20) + 5;
+    enemyHP -= damage;
+    appendToLog(`⚔️ ${playerName} атакует в "${target.value}" и наносит ${damage} урона. HP врага: ${Math.max(enemyHP, 0)}`);
+    appendToLog(`🛡 ${playerName} защищает зоны: ${zones.join(", ") || "Нет"}`);
+
+    setTimeout(() => {
+      const enemyZones = ["Head", "Neck", "Body", "Belly", "Legs"];
+      const enemyTarget = enemyZones[Math.floor(Math.random() * enemyZones.length)];
+      const enemyDamage = Math.floor(Math.random() * 15) + 3;
+      const blocked = zones.includes(enemyTarget);
+      const finalDamage = blocked ? 0 : enemyDamage;
+      playerHP1 -= finalDamage;
+      appendToLog(`💥 Враг атакует в "${enemyTarget}" и наносит ${finalDamage} урона. HP игрока: ${Math.max(playerHP1, 0)}`);
+    }, 1000);
+  });
+
+  function appendToLog(text) {
+    const p = document.createElement("p");
+    p.className = "fafa";
+    p.textContent = text;
+    log.appendChild(p);
+    log.scrollTop = log.scrollHeight;
+  }
+
 
 });
+
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("wins", wins);
+  localStorage.setItem("loses", loses);
+  localStorage.setItem("playerHP", playerHP);
+  localStorage.setItem("currentLevel", currentLevel);
+});
+
+window.addEventListener("load", () => {
+  wins = parseInt(localStorage.getItem("wins")) || 0;
+  loses = parseInt(localStorage.getItem("loses")) || 0;
+  playerHP = parseInt(localStorage.getItem("playerHP")) || 150;
+  currentLevel = parseInt(localStorage.getItem("currentLevel")) || 0;
+  botHP = enemies[currentLevel].hp;
+  wons.textContent = "Wins: " + wins;
+  looses.textContent = "Loses: " + loses;
+});
+

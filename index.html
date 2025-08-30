@@ -100,54 +100,58 @@
           <button type="button" class="--">HP++</button>
         </div>
       </div>
-    </div>
-    <!--<div class="multiplayer">
-      <div class="centrifuga">
-        <span>
-          <p>Select name<br></p>
-        </span>
-        <span>
-          <p><br>Character Name</p>
-        </span>
-        <span>
-         <input type="text" name="nameOfCharacter" id="myInput1">
-        </span>
-        <span>
-          <button type="button" class="knopka1" disabled>Create Character</button>
-        </span>
+      <div class="ggg">
+        <div>
+          <img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-blql-p-mech-iz-mainkrafta-png-31.png" alt="sword">
+        </div>
+        <p>Открыть секретный режим за 10 побед!</p>
+        <button>Открыть!</button>
       </div>
-      <div class="fighter1">
-        <img src="https://i.pinimg.com/736x/f1/32/01/f13201ab5331ffcd5ee991bed9ea7b96.jpg" alt="" class="class">
-        <span class="space">
-          <form class="inn">
-            <label class="ff"><input type="radio" name="target">Head</label>
-            <label class="ff"><input type="radio" name="target">Neck</label>
-            <label class="ff"><input type="radio" name="target">Body</label>
-            <label class="ff"><input type="radio" name="target">Belly</label>
-            <label class="ff"><input type="radio" name="target">Legs</label>
-          </form>
-          <div class="linia"></div>
-          <form class="in">
-            <label class="ff"><input type="checkbox" name="zones[]">Head<br></label>
-            <label class="ff"><input type="checkbox" name="zones[]">Neck<br></label>
-            <label class="ff"><input type="checkbox" name="zones[]">Body<br></label>
-            <label class="ff"><input type="checkbox" name="zones[]">Belly<br></label>
-            <label class="ff"><input type="checkbox" name="zones[]">Legs<br></label>
-          </form>
-        </span>
-        <span>
-          <img src="https://i.ytimg.com/vi/kiTq8S3oLDU/maxresdefault.jpg" alt="" class="lala">
-        </span>
-        <span class="pp">
-          <div class="liner"></div>
-          <div class="containerForDinamicOfFight">
-          </div>
-        </span>
-        <div class="positioner">
-          <button type="button" class="sit">Удар</button>
+    </div>
+  <div class="multiplayer">
+    <div class="character-setup">
+      <h2>Multiplayer Setup</h2>
+      <label for="myInput1">Введите имя персонажа:</label>
+      <input type="text" name="nameOfCharacter" id="myInput1" placeholder="Ваше имя">
+      <button type="button" class="create-character" disabled>Создать персонажа</button>
+    </div>
+
+    <div class="battle-arena">
+      <div class="player-side">
+        <img src="https://i.pinimg.com/736x/f1/32/01/f13201ab5331ffcd5ee991bed9ea7b96.jpg" alt="Ваш персонаж" class="avatar">
+        <form class="attack-form">
+          <p>🎯 Цель атаки:</p>
+          <label><input type="radio" name="target" value="Head"> Head</label>
+          <label><input type="radio" name="target" value="Neck"> Neck</label>
+          <label><input type="radio" name="target" value="Body"> Body</label>
+          <label><input type="radio" name="target" value="Belly"> Belly</label>
+          <label><input type="radio" name="target" value="Legs"> Legs</label>
+        </form>
+
+      <form class="defense-form">
+          <p>🛡 Зоны защиты:</p>
+          <label><input type="checkbox" name="zones[]" value="Head"> Head</label>
+          <label><input type="checkbox" name="zones[]" value="Neck"> Neck</label>
+          <label><input type="checkbox" name="zones[]" value="Body"> Body</label>
+          <label><input type="checkbox" name="zones[]" value="Belly"> Belly</label>
+          <label><input type="checkbox" name="zones[]" value="Legs"> Legs</label>
+        </form>
+      </div>
+
+      <div class="enemy-side">
+        <img src="https://i.ytimg.com/vi/kiTq8S3oLDU/maxresdefault.jpg" alt="Противник" class="avatar">
+      </div>
+
+      <div class="battle-log">
+        <div class="liner"></div>
+          <div class="containerForDinamic"></div>
+        </div>
+
+        <div class="action-panel">
+          <button type="button" class="attack-button">⚔️ Атаковать</button>
         </div>
       </div>
-    </div>-->
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
