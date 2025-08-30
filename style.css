@@ -8,12 +8,22 @@
   src: url('fonts/lastfunk-street.colr_.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Comic Sans S';
+  src: url('fonts/Comic Sans MS.ttf') format('truetype');
+}
+
 .startWindow {
-    display: flex;
-    justify-content: center;
-    font-family: Forum;
-    font-size: 30px;
-    margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  font-family: Forum;
+  font-size: 30px;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: cover; 
+  background-image: url("images/terca.jpeg");
 }
 
 .knopka {
@@ -511,3 +521,7 @@ span.imge img:first-child {
   display: none;
 }
 
+.bb, .fag {
+  font-family: Comic Sans S;
+  color: rgb(128, 201, 128);
+}

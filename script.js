@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const input1 = document.getElementById("myInput1")
   const centrifuga = document.querySelector(".centrifuga")
   const fii = document.querySelector(".fighter1")
+  const secret = document.querySelector(".secretText")
+  const texter = document.querySelector(".texter")
 
   item.addEventListener("mouseover", () => {
     item.style.transform = "scale(1.1)";
@@ -101,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sig.style.display = "flex";
       settings.style.display = "none";
       character.style.display = "none";
+      shop.style.display = "none";
     });
   });
 
@@ -116,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   rec2.addEventListener("click", () => {
     character.style.display = "flex";
-    sig.style.display = "none;"
+    sig.style.display = "none";
+    shop.style.display = "none";
   })
 
   rec.addEventListener("click", () =>{
@@ -199,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       name: "Голый",
       hp: 120,
-      image: "https://avatarko.ru/img/kartinka/1/Gollum_Middle-earth.jpg"
+      image: "images/golyi.png"
     },
     {
       name: "Назгул",
@@ -236,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p style="font-family: Lastfunk Street">Уровень ${currentLevel + 1}: ${enemy.name}</p>
       <p style="font-family: Lastfunk Street">HP противника: ${botHP}</p>
     `;
-  }  
+  };
 
   document.querySelector(".fight").addEventListener("click", () => {
     fightScreen.style.display = "flex";
@@ -309,8 +313,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fightButton.disabled = false;
         updateEnemyDisplay();
       } else {
-        resultContainer.innerHTML += `<p style="color:gold;">🎉 Вы победили всех врагов!</p>`;
+        resultContainer.innerHTML += `<p style="color:gold;">🎉 Вы победили всех врагов!Мир спасён вами!!!</p>`;
         fightButton.disabled = true;
+        character.style.display = "flex";
       }
     }
 
