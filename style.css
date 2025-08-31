@@ -375,8 +375,8 @@ span.imge img:first-child {
 
 .fafa {
   font-family: Monte Summa C;
-  font-size: 23px;
-  color: rgb(211, 83, 27);
+  font-size: 23px !important;
+  color: rgb(231, 223, 98);
 }
 
 .wins {
