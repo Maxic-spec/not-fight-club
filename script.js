@@ -228,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  let maxplHP = 120
   let playerHP = 120;
   let wins = 0;
   let loses = 0;
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         botHP -= 15;
         playerAttackResult = `Вы атаковали бота в "${playerAttack}", но он заблокировал ваш удар. К вашему счастью ваш меч скользнул по руке противника, и отрезал палец с Кольцом Всевластья! HP бота: ${botHP}`;
       } else {
-        botHP -= 25;
+        botHP -= 20;
         playerAttackResult = `Вы атаковали бота в "${playerAttack}" — попадание! Удар был так хорош, что снёс боту руку с Кольцом Всевластья! HP бота: ${botHP}`;
       }
     } else {
@@ -310,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentLevel++;
       if (currentLevel < enemies.length) {
         botHP = enemies[currentLevel].hp;
-        playerHP = 120;
+        playerHP = maxplHP;
         fightButton.disabled = false;
         updateEnemyDisplay();
       } else {
@@ -323,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (playerHP <= 0) {
       loses++;
       resultContainer.innerHTML += `<p style="color:red;">💀 Вы проиграли!</p>`;
-      fightScreen.style.display = "none";
+      fight.style.display = "none";
       characterScreen.style.display = "flex";
       botHP = enemies[currentLevel].hp;
       playerHP = 120;
@@ -344,7 +345,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let maxHP = 200;
     if (maxHP === playerHP) {
       alert("Вы достигли максимального количества HP!")
-
     } else {
         if (wins > 0) {
           wins = Math.max(0, wins - 1);
@@ -352,12 +352,10 @@ document.addEventListener("DOMContentLoaded", () => {
           playerHP += 10;
 
         if (wins === 0) {
-          minus.disabled = true;
+          alert("У вас нет побед которые можно обменять на здоровье!!!")
         }
-        } else {
-          alert("У вас нет побед, которые можно обменять на здоровье!!!");
         }
-    }
+      }
   });
 
   item1.addEventListener("mouseover", () => {
