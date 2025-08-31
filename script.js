@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       settings.style.display = "none";
       character.style.display = "none";
       shop.style.display = "none";
+      fight.style.display = "none";
     });
   });
 
