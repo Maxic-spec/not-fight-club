@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentLevel++;
       if (currentLevel < enemies.length) {
         botHP = enemies[currentLevel].hp;
-        playerHP = 150;
+        playerHP = 120;
         fightButton.disabled = false;
         updateEnemyDisplay();
       } else {
