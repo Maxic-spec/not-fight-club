@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  let playerHP = 170;
+  let playerHP = 120;
   let wins = 0;
   let loses = 0;
   let currentLevel = 0;
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fightScreen.style.display = "none";
       characterScreen.style.display = "flex";
       botHP = enemies[currentLevel].hp;
-      playerHP = 150;
+      playerHP = 120;
       fightButton.disabled = false;
       updateEnemyDisplay();
     }
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (wins > 0) {
           wins = Math.max(0, wins - 1);
           wons.textContent = "Wins: " + wins;
-          playerHP += 5;
+          playerHP += 10;
 
         if (wins === 0) {
           minus.disabled = true;
