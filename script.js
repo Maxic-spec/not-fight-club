@@ -341,16 +341,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const minus = document.querySelector(".--");
 
   minus.addEventListener("click", () => {
-    if (wins > 0) {
-      wins = Math.max(0, wins - 1);
-      wons.textContent = "Wins: " + wins;
-      playerHP += 10;
+    let maxHP = 200;
+    if (maxHP === playerHP) {
+      alert("Вы достигли максимального количества HP!")
 
-    if (wins === 0) {
-      minus.disabled = true;
-    }
     } else {
-      alert("У вас нет побед, которые можно обменять на здоровье!!!");
+        if (wins > 0) {
+          wins = Math.max(0, wins - 1);
+          wons.textContent = "Wins: " + wins;
+          playerHP += 5;
+
+        if (wins === 0) {
+          minus.disabled = true;
+        }
+        } else {
+          alert("У вас нет побед, которые можно обменять на здоровье!!!");
+        }
     }
   });
 
